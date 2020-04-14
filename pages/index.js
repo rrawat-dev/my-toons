@@ -1,93 +1,122 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import Card from '../components/card';
 import Filters from '../components/filters';
 import { getStore } from '../redux/store';
 import withRedux from "next-redux-wrapper";
+import {getCharacters} from '../services/character';
+
+// components
+import Search from '../components/Search';
+import Sorting from '../components/Sorting';
+import CharacterList from '../components/CharacterList/CharacterList';
+import Pagination from '../components/Pagination/Pagination';
+import CharacterFilters from '../components/CharacterFilters/CharacterFilters';
+import CharacterFiltersApplied from '../components/CharacterFiltersApplied/CharacterFiltersApplied';
+
 class Home extends React.Component {
+
     constructor (props) {
         super (props);
         this.state = {
-            CharacterDataToSend: [],
-            speciesFilterData: [],
-            genderFilterData: [],
-            originFilterData: []
-        }
-    }
-    static async getInitialProps (context) {
-        // getStore().dispatch({
-        //     type: "SET_CHARACTERS",
-        //     payload: [1,2,3]
-        // })
-
-        // console.log("+++++++++++++++++++", context);
-        // return Promise.resolve({})
-        const url = 'https://rickandmortyapi.com/api/character/ ';
-        const response = await fetch(url);
-        const CharacterData = await response.json();
-        let species = [];
-        let gender = [];
-        let origin = [];
-
-        let speciesFilterData= [];
-        let genderFilterData= [];
-        
-
-        CharacterData.results.find(data => {
-            species.push(data.species);
-            gender.push(data.gender);
-            origin.push(data.origin);
-        });
-
-        speciesFilterData = species.filter((item, index) => species.indexOf(item) === index);
-        genderFilterData = gender.filter((item, index) => gender.indexOf(item) === index);
-
-        return {
-            pageProps: {
-                CharacterDataToSend: CharacterData.results, 
-                speciesFilterData:  speciesFilterData, 
-                genderFilterData: genderFilterData,
-                originFilterData: origin
-            }
+            characters: props.characters || [],
+            pagination: props.pagination || null,
+            page: 1,
+            filters: {}
         };
+
+        this.fetchCharacters = this.fetchCharacters.bind(this);
+        this.paginateCharacters = this.paginateCharacters.bind(this);
+        this.filterCharacters = this.filterCharacters.bind(this);
+        this.searchCharacters = this.searchCharacters.bind(this);
+        this.onAppliedFilterRemove = this.onAppliedFilterRemove.bind(this);
     }
 
-    async componentDidMount () {
-        // const url = 'https://rickandmortyapi.com/api/character/ ';
-        // const response = await fetch(url);
-        // const CharacterData = await response.json();
-        // let species = [];
-        // let gender = [];
-        // let origin = [];
+    static async getInitialProps (context) {
+        return getCharacters().then(res => {
+            return {
+                characters: res.data.results,
+                pagination: res.data.info
+            };
+        }).catch(err => {
+            return {
+                characters: [],
+                pagination: null
+            };
+        });
+    }
 
-        // let speciesFilterData= [];
-        // let genderFilterData= [];
-        
+    fetchCharacters() {
+        getCharacters({
+            searchText: this.state.searchText || '',
+            species: this.state.filters.species || [],
+            gender: this.state.filters.gender || [],
+            page: this.state.page || 1
+        }).then(res => {
+            this.setState({
+                characters: res.data.results,
+                pagination: res.data.info
+            });
+        }).catch(err => {
+            return {
+                characters: [],
+                pagination: null
+            };
+        });
+    }
 
-        // CharacterData.results.find(data => {
-        //     species.push(data.species);
-        //     gender.push(data.gender);
-        //     origin.push(data.origin);
-        // });
+    paginateCharacters(page) {
+        this.setState({
+            page
+        }, () => this.fetchCharacters());
+    }
 
-        // speciesFilterData = species.filter((item, index) => species.indexOf(item) === index);
-        // genderFilterData = gender.filter((item, index) => gender.indexOf(item) === index);
+    filterCharacters(filters) {
+        this.setState({
+            filters: {
+                ...this.state.filters,
+                ...filters
+            },
+            page: 1
+        }, () => this.fetchCharacters());
+    }
 
-        // this.setState({
-        //      CharacterDataToSend: CharacterData.results, 
-        //      speciesFilterData:  speciesFilterData, 
-        //      genderFilterData: genderFilterData,
-        //      originFilterData: origin
-        //     });
+    searchCharacters(searchText) {
+        this.setState({
+            searchText,
+            page: 1
+        }, () => this.fetchCharacters());
+    }
+
+    onAppliedFilterRemove(filterCategory, removedFilter) {
+        const filters = {
+            ...this.state.filters,
+            [filterCategory]: this.state.filters[filterCategory].filter(filter => filter !== removedFilter)
+        };
+
+        this.setState({
+            filters
+        }, () => {
+
+            this.fetchCharacters()
+        });
     }
 
     render () {
         return (
             <div>
                 <div className="float-left width-12">
-                    <Filters species={this.state.speciesFilterData} gender={this.state.genderFilterData} origin={this.state.originFilterData}></Filters>
+                    <CharacterFilters
+                        characters={this.props.characters}
+                        onFilterChange={this.filterCharacters}
+                        selectedFilters={this.state.filters}
+                    />
                 </div>
                 <div className="float-right width-85">
-                    <Card CharacterData={this.state.CharacterDataToSend}></Card>
+                    <CharacterFiltersApplied filters={this.state.filters} onAppliedFilterRemove={this.onAppliedFilterRemove} />
+                    <Search onSearch={this.searchCharacters} />
+                    <Sorting />
+                    <CharacterList characters={this.state.characters} />
+                    <Pagination pagination={this.state.pagination} onPaginate={this.paginateCharacters} page={this.state.page} />
                 </div>
             </div>
         )

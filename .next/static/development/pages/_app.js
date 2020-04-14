@@ -15,12 +15,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Search__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Search */ "./components/Search.js");
-/* harmony import */ var _Sorting__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Sorting */ "./components/Sorting.js");
 
 
 var _this = undefined,
-    _jsxFileName = "/Users/nitbhatn0/Desktop/myToons/components/Header.js";
+    _jsxFileName = "/Users/rakrawat/workspace/my-toons/components/Header.js";
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
@@ -47,8 +45,6 @@ function _templateObject() {
 
 
 
-
-
 var Logo = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject(), function (props) {
   return props.theme.blue;
 });
@@ -61,7 +57,7 @@ var Header = function Header() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 43,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -69,14 +65,14 @@ var Header = function Header() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 44,
       columnNumber: 7
     }
   }, __jsx(Logo, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 45,
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -84,14 +80,14 @@ var Header = function Header() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 46,
       columnNumber: 11
     }
   }, __jsx("a", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 47,
       columnNumber: 13
     }
   }, "My Toons")))), __jsx("div", {
@@ -99,24 +95,10 @@ var Header = function Header() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 51,
       columnNumber: 7
     }
-  }, __jsx(_Search__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53,
-      columnNumber: 9
-    }
-  }), __jsx(_Sorting__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 54,
-      columnNumber: 9
-    }
-  })));
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -137,7 +119,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
 var _this = undefined,
-    _jsxFileName = "/Users/nitbhatn0/Desktop/myToons/components/Meta.js";
+    _jsxFileName = "/Users/rakrawat/workspace/my-toons/components/Meta.js";
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -227,7 +209,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/nitbhatn0/Desktop/myToons/components/Page.js";
+var _jsxFileName = "/Users/rakrawat/workspace/my-toons/components/Page.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, result); }; }
@@ -345,189 +327,6 @@ var Page = /*#__PURE__*/function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Page);
-
-/***/ }),
-
-/***/ "./components/Search.js":
-/*!******************************!*\
-  !*** ./components/Search.js ***!
-  \******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-
-
-
-
-
-var _jsxFileName = "/Users/nitbhatn0/Desktop/myToons/components/Search.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
-
-function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, result); }; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-
-
-var Search = /*#__PURE__*/function (_React$Component) {
-  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_2__["default"])(Search, _React$Component);
-
-  var _super = _createSuper(Search);
-
-  function Search() {
-    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Search);
-
-    return _super.apply(this, arguments);
-  }
-
-  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Search, [{
-    key: "render",
-    value: function render() {
-      return __jsx("div", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 6,
-          columnNumber: 13
-        }
-      }, __jsx("input", {
-        type: "text",
-        placeholder: "Search here..",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 7,
-          columnNumber: 17
-        }
-      }), __jsx("button", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 8,
-          columnNumber: 17
-        }
-      }, "Search"));
-    }
-  }]);
-
-  return Search;
-}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (Search);
-
-/***/ }),
-
-/***/ "./components/Sorting.js":
-/*!*******************************!*\
-  !*** ./components/Sorting.js ***!
-  \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-
-
-
-
-
-var _jsxFileName = "/Users/nitbhatn0/Desktop/myToons/components/Sorting.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
-
-function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, result); }; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-
-
-var Sorting = /*#__PURE__*/function (_React$Component) {
-  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_2__["default"])(Sorting, _React$Component);
-
-  var _super = _createSuper(Sorting);
-
-  function Sorting() {
-    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Sorting);
-
-    return _super.apply(this, arguments);
-  }
-
-  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Sorting, [{
-    key: "render",
-    value: function render() {
-      return __jsx("div", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 6,
-          columnNumber: 13
-        }
-      }, __jsx("h3", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 7,
-          columnNumber: 17
-        }
-      }, "Sort by ID"), __jsx("input", {
-        type: "radio",
-        name: "sorting",
-        id: "ascending",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 8,
-          columnNumber: 17
-        }
-      }), __jsx("label", {
-        "for": "ascending",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 9,
-          columnNumber: 17
-        }
-      }, "Ascending"), __jsx("input", {
-        type: "radio",
-        name: "sorting",
-        id: "descending",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 10,
-          columnNumber: 17
-        }
-      }), __jsx("label", {
-        "for": "descending",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 11,
-          columnNumber: 17
-        }
-      }, "Descending"));
-    }
-  }]);
-
-  return Sorting;
-}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (Sorting);
 
 /***/ }),
 
@@ -13250,7 +13049,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/nitbhatn0/Desktop/myToons/pages/_app.js";
+var _jsxFileName = "/Users/rakrawat/workspace/my-toons/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
@@ -13290,21 +13089,21 @@ var store = Object(_redux_store__WEBPACK_IMPORTED_MODULE_11__["getStore"])();
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24,
+          lineNumber: 25,
           columnNumber: 13
         }
       }, __jsx(_components_Page__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25,
+          lineNumber: 26,
           columnNumber: 17
         }
       }, __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, this.props.pageProps, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26,
+          lineNumber: 27,
           columnNumber: 21
         }
       }))));
@@ -13358,27 +13157,30 @@ var store = Object(_redux_store__WEBPACK_IMPORTED_MODULE_11__["getStore"])();
 
 /***/ }),
 
-/***/ "./redux/reducers/characters.js":
-/*!**************************************!*\
-  !*** ./redux/reducers/characters.js ***!
-  \**************************************/
+/***/ "./redux/reducers/filters.js":
+/*!***********************************!*\
+  !*** ./redux/reducers/filters.js ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  var characters = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var filters = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
-    case 'SET_CHARACTERS':
-      return {
-        errorMessage: action.payload
-      };
+    case 'ADD_FILTER':
+      filters = filters.concat('');
+
+    case 'REMOVE_FILTER':
+      filters = filters.filter(function () {
+        return false;
+      });
   }
 
-  return characters;
+  return filters;
 });
 ;
 
@@ -13394,11 +13196,11 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
-/* harmony import */ var _characters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./characters */ "./redux/reducers/characters.js");
+/* harmony import */ var _filters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./filters */ "./redux/reducers/filters.js");
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  characters: _characters__WEBPACK_IMPORTED_MODULE_1__["default"]
+  filters: _filters__WEBPACK_IMPORTED_MODULE_1__["default"]
 }));
 
 /***/ }),
@@ -13441,7 +13243,7 @@ function getStore() {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! next-client-pages-loader?page=%2F_app&absolutePagePath=private-next-pages%2F_app.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F_app&absolutePagePath=private-next-pages%2F_app.js!./");
-module.exports = __webpack_require__(/*! /Users/nitbhatn0/Desktop/myToons/node_modules/next/dist/client/router.js */"./node_modules/next/dist/client/router.js");
+module.exports = __webpack_require__(/*! /Users/rakrawat/workspace/my-toons/node_modules/next/dist/client/router.js */"./node_modules/next/dist/client/router.js");
 
 
 /***/ }),

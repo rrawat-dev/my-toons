@@ -93,6 +93,519 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/Character/Character.js":
+/*!*******************************************!*\
+  !*** ./components/Character/Character.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Character; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/rakrawat/workspace/my-toons/components/Character/Character.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function Character(props) {
+  const {
+    character
+  } = props;
+  return __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7,
+      columnNumber: 9
+    }
+  }, __jsx("hr", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8,
+      columnNumber: 13
+    }
+  }), "Name: ", character.name, __jsx("br", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10,
+      columnNumber: 13
+    }
+  }), "Gender: ", character.gender, __jsx("br", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 13
+    }
+  }), "Species: ", character.species);
+}
+
+/***/ }),
+
+/***/ "./components/CharacterFilters/CharacterFilters.js":
+/*!*********************************************************!*\
+  !*** ./components/CharacterFilters/CharacterFilters.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CharacterFilters; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Filters_Filters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Filters/Filters */ "./components/Filters/Filters.js");
+var _jsxFileName = "/Users/rakrawat/workspace/my-toons/components/CharacterFilters/CharacterFilters.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const filtersData = {
+  "species": {
+    "label": "Species",
+    "data": ["Human", "Mythology", "Other"]
+  }
+};
+function CharacterFilters(props) {
+  const {
+    0: filters,
+    1: setFilters
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    species: [],
+    gender: [],
+    origin: []
+  });
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    const data = Object.assign({}, filters);
+    props.characters.forEach(character => {
+      if (data.species.indexOf(character.species) === -1) {
+        data.species = data.species.concat(character.species);
+      }
+
+      if (data.gender.indexOf(character.gender) === -1) {
+        data.gender = data.gender.concat(character.gender);
+      }
+    });
+    setFilters(data);
+  }, [props.characters]);
+
+  function onSpeciesFilterChange(filters) {
+    props.onFilterChange && props.onFilterChange({
+      species: filters
+    });
+  }
+
+  function onGenderFilterChange(filters) {
+    props.onFilterChange && props.onFilterChange({
+      gender: filters
+    });
+  }
+
+  return __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52,
+      columnNumber: 9
+    }
+  }, filters.species.length > 0 && __jsx(_Filters_Filters__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    label: "Species",
+    filters: filters.species,
+    sortby: "ASC",
+    onFilterChange: onSpeciesFilterChange,
+    selectedFilters: props.selectedFilters.species,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56,
+      columnNumber: 17
+    }
+  }), filters.gender.length > 0 && __jsx(_Filters_Filters__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    label: "Gender",
+    filters: filters.gender,
+    sortby: "DESC",
+    onFilterChange: onGenderFilterChange,
+    selectedFilters: props.selectedFilters.gender,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67,
+      columnNumber: 17
+    }
+  }));
+}
+
+/***/ }),
+
+/***/ "./components/CharacterFiltersApplied/CharacterFiltersApplied.js":
+/*!***********************************************************************!*\
+  !*** ./components/CharacterFiltersApplied/CharacterFiltersApplied.js ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CharacterFiltersApplied; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/rakrawat/workspace/my-toons/components/CharacterFiltersApplied/CharacterFiltersApplied.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function CharacterFiltersApplied(props) {
+  const {
+    filters
+  } = props;
+
+  function removeFilter(filterCategory, filter) {
+    props.onAppliedFilterRemove && props.onAppliedFilterRemove(filterCategory, filter);
+  }
+
+  return __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 9
+    }
+  }, Object.keys(filters || {}).map(filterCategory => (filters[filterCategory] || []).map(filter => filter ? __jsx("span", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 34
+    }
+  }, filter, " ", __jsx("i", {
+    onClick: () => removeFilter(filterCategory, filter),
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 49
+    }
+  }, "x")) : null)));
+}
+
+/***/ }),
+
+/***/ "./components/CharacterList/CharacterList.js":
+/*!***************************************************!*\
+  !*** ./components/CharacterList/CharacterList.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CharacterList; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Character_Character__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Character/Character */ "./components/Character/Character.js");
+var _jsxFileName = "/Users/rakrawat/workspace/my-toons/components/CharacterList/CharacterList.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+function CharacterList(props) {
+  return props.characters.map(character => __jsx(_Character_Character__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    character: character,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5,
+      columnNumber: 46
+    }
+  }));
+}
+
+/***/ }),
+
+/***/ "./components/Filters/Filters.js":
+/*!***************************************!*\
+  !*** ./components/Filters/Filters.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Filters; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/rakrawat/workspace/my-toons/components/Filters/Filters.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function Filters(props) {
+  const {
+    label,
+    filters,
+    selectedFilters = [],
+    sortby
+  } = props;
+
+  function onFilterChange(evt) {
+    const value = evt.target.value;
+    const newFilters = evt.target.checked ? selectedFilters.concat(value) : selectedFilters.filter(filter => filter !== value);
+    props.onFilterChange && props.onFilterChange(newFilters);
+  }
+
+  return __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14,
+      columnNumber: 9
+    }
+  }, __jsx("h3", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 13
+    }
+  }, label), __jsx("ul", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 13
+    }
+  }, filters.map(filter => __jsx("li", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 25
+    }
+  }, __jsx("label", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 29
+    }
+  }, __jsx("input", {
+    type: "checkbox",
+    value: filter,
+    checked: selectedFilters.indexOf(filter) > -1,
+    onChange: onFilterChange,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
+      columnNumber: 33
+    }
+  }), filter)))));
+}
+
+/***/ }),
+
+/***/ "./components/Pagination/Pagination.js":
+/*!*********************************************!*\
+  !*** ./components/Pagination/Pagination.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/rakrawat/workspace/my-toons/components/Pagination/Pagination.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+/* harmony default export */ __webpack_exports__["default"] = (function (props) {
+  const {
+    pagination
+  } = props;
+
+  function previousPage() {
+    if (pagination.prev) {
+      props.onPaginate(props.page - 1);
+    }
+  }
+
+  function nextPage() {
+    if (pagination.next) {
+      props.onPaginate(props.page + 1);
+    }
+  }
+
+  return __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 9
+    }
+  }, __jsx("span", {
+    onClick: previousPage,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 13
+    }
+  }, "Previous"), __jsx("span", {
+    onClick: nextPage,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
+      columnNumber: 13
+    }
+  }, "Next"));
+});
+
+/***/ }),
+
+/***/ "./components/Search.js":
+/*!******************************!*\
+  !*** ./components/Search.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/rakrawat/workspace/my-toons/components/Search.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+class Search extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchText: ''
+    };
+    this.search = this.search.bind(this);
+    this.onSearchTextChange = this.onSearchTextChange.bind(this);
+  }
+
+  search() {
+    this.props.onSearch && this.props.onSearch(this.state.searchText);
+  }
+
+  onSearchTextChange(evt) {
+    this.setState({
+      searchText: evt.target.value
+    });
+  }
+
+  render() {
+    return __jsx("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27,
+        columnNumber: 13
+      }
+    }, __jsx("input", {
+      type: "text",
+      placeholder: "Search here..",
+      onChange: this.onSearchTextChange,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28,
+        columnNumber: 17
+      }
+    }), __jsx("button", {
+      onClick: this.search,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29,
+        columnNumber: 17
+      }
+    }, "Search"));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Search);
+
+/***/ }),
+
+/***/ "./components/Sorting.js":
+/*!*******************************!*\
+  !*** ./components/Sorting.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/rakrawat/workspace/my-toons/components/Sorting.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+class Sorting extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  render() {
+    return __jsx("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 6,
+        columnNumber: 13
+      }
+    }, __jsx("h3", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7,
+        columnNumber: 17
+      }
+    }, "Sort by ID"), __jsx("input", {
+      type: "radio",
+      name: "sorting",
+      id: "ascending",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 8,
+        columnNumber: 17
+      }
+    }), __jsx("label", {
+      for: "ascending",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9,
+        columnNumber: 17
+      }
+    }, "Ascending"), __jsx("input", {
+      type: "radio",
+      name: "sorting",
+      id: "descending",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 10,
+        columnNumber: 17
+      }
+    }), __jsx("label", {
+      for: "descending",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11,
+        columnNumber: 17
+      }
+    }, "Descending"));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Sorting);
+
+/***/ }),
+
 /***/ "./components/card.js":
 /*!****************************!*\
   !*** ./components/card.js ***!
@@ -109,7 +622,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! nprogress */ "nprogress");
 /* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(nprogress__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/nitbhatn0/Desktop/myToons/components/card.js";
+var _jsxFileName = "/Users/rakrawat/workspace/my-toons/components/card.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -306,7 +819,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _styles_filterStyles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/filterStyles */ "./components/styles/filterStyles.js");
-var _jsxFileName = "/Users/nitbhatn0/Desktop/myToons/components/filter.js";
+var _jsxFileName = "/Users/rakrawat/workspace/my-toons/components/filter.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -388,7 +901,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./filter */ "./components/filter.js");
-var _jsxFileName = "/Users/nitbhatn0/Desktop/myToons/components/filters.js";
+var _jsxFileName = "/Users/rakrawat/workspace/my-toons/components/filters.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -554,8 +1067,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../redux/store */ "./redux/store/index.js");
 /* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next-redux-wrapper */ "next-redux-wrapper");
 /* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_redux_wrapper__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/Users/nitbhatn0/Desktop/myToons/pages/index.js";
+/* harmony import */ var _services_character__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/character */ "./services/character/index.js");
+/* harmony import */ var _components_Search__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Search */ "./components/Search.js");
+/* harmony import */ var _components_Sorting__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Sorting */ "./components/Sorting.js");
+/* harmony import */ var _components_CharacterList_CharacterList__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/CharacterList/CharacterList */ "./components/CharacterList/CharacterList.js");
+/* harmony import */ var _components_Pagination_Pagination__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Pagination/Pagination */ "./components/Pagination/Pagination.js");
+/* harmony import */ var _components_CharacterFilters_CharacterFilters__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/CharacterFilters/CharacterFilters */ "./components/CharacterFilters/CharacterFilters.js");
+/* harmony import */ var _components_CharacterFiltersApplied_CharacterFiltersApplied__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/CharacterFiltersApplied/CharacterFiltersApplied */ "./components/CharacterFiltersApplied/CharacterFiltersApplied.js");
+var _jsxFileName = "/Users/rakrawat/workspace/my-toons/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+ // components
+
+
 
 
 
@@ -566,66 +1101,81 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor(props) {
     super(props);
     this.state = {
-      CharacterDataToSend: [],
-      speciesFilterData: [],
-      genderFilterData: [],
-      originFilterData: []
+      characters: props.characters || [],
+      pagination: props.pagination || null,
+      page: 1,
+      filters: {}
     };
+    this.fetchCharacters = this.fetchCharacters.bind(this);
+    this.paginateCharacters = this.paginateCharacters.bind(this);
+    this.filterCharacters = this.filterCharacters.bind(this);
+    this.searchCharacters = this.searchCharacters.bind(this);
+    this.onAppliedFilterRemove = this.onAppliedFilterRemove.bind(this);
   }
 
   static async getInitialProps(context) {
-    // getStore().dispatch({
-    //     type: "SET_CHARACTERS",
-    //     payload: [1,2,3]
-    // })
-    // console.log("+++++++++++++++++++", context);
-    // return Promise.resolve({})
-    const url = 'https://rickandmortyapi.com/api/character/ ';
-    const response = await fetch(url);
-    const CharacterData = await response.json();
-    let species = [];
-    let gender = [];
-    let origin = [];
-    let speciesFilterData = [];
-    let genderFilterData = [];
-    CharacterData.results.find(data => {
-      species.push(data.species);
-      gender.push(data.gender);
-      origin.push(data.origin);
+    return Object(_services_character__WEBPACK_IMPORTED_MODULE_5__["getCharacters"])().then(res => {
+      return {
+        characters: res.data.results,
+        pagination: res.data.info
+      };
+    }).catch(err => {
+      return {
+        characters: [],
+        pagination: null
+      };
     });
-    speciesFilterData = species.filter((item, index) => species.indexOf(item) === index);
-    genderFilterData = gender.filter((item, index) => gender.indexOf(item) === index);
-    return {
-      pageProps: {
-        CharacterDataToSend: CharacterData.results,
-        speciesFilterData: speciesFilterData,
-        genderFilterData: genderFilterData,
-        originFilterData: origin
-      }
-    };
   }
 
-  async componentDidMount() {// const url = 'https://rickandmortyapi.com/api/character/ ';
-    // const response = await fetch(url);
-    // const CharacterData = await response.json();
-    // let species = [];
-    // let gender = [];
-    // let origin = [];
-    // let speciesFilterData= [];
-    // let genderFilterData= [];
-    // CharacterData.results.find(data => {
-    //     species.push(data.species);
-    //     gender.push(data.gender);
-    //     origin.push(data.origin);
-    // });
-    // speciesFilterData = species.filter((item, index) => species.indexOf(item) === index);
-    // genderFilterData = gender.filter((item, index) => gender.indexOf(item) === index);
-    // this.setState({
-    //      CharacterDataToSend: CharacterData.results, 
-    //      speciesFilterData:  speciesFilterData, 
-    //      genderFilterData: genderFilterData,
-    //      originFilterData: origin
-    //     });
+  fetchCharacters() {
+    Object(_services_character__WEBPACK_IMPORTED_MODULE_5__["getCharacters"])({
+      searchText: this.state.searchText || '',
+      species: this.state.filters.species || [],
+      gender: this.state.filters.gender || [],
+      page: this.state.page || 1
+    }).then(res => {
+      this.setState({
+        characters: res.data.results,
+        pagination: res.data.info
+      });
+    }).catch(err => {
+      return {
+        characters: [],
+        pagination: null
+      };
+    });
+  }
+
+  paginateCharacters(page) {
+    this.setState({
+      page
+    }, () => this.fetchCharacters());
+  }
+
+  filterCharacters(filters) {
+    this.setState({
+      filters: _objectSpread({}, this.state.filters, {}, filters),
+      page: 1
+    }, () => this.fetchCharacters());
+  }
+
+  searchCharacters(searchText) {
+    this.setState({
+      searchText,
+      page: 1
+    }, () => this.fetchCharacters());
+  }
+
+  onAppliedFilterRemove(filterCategory, removedFilter) {
+    const filters = _objectSpread({}, this.state.filters, {
+      [filterCategory]: this.state.filters[filterCategory].filter(filter => filter !== removedFilter)
+    });
+
+    this.setState({
+      filters
+    }, () => {
+      this.fetchCharacters();
+    });
   }
 
   render() {
@@ -633,7 +1183,7 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85,
+        lineNumber: 106,
         columnNumber: 13
       }
     }, __jsx("div", {
@@ -641,17 +1191,17 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86,
+        lineNumber: 107,
         columnNumber: 17
       }
-    }, __jsx(_components_filters__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      species: this.state.speciesFilterData,
-      gender: this.state.genderFilterData,
-      origin: this.state.originFilterData,
+    }, __jsx(_components_CharacterFilters_CharacterFilters__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      characters: this.props.characters,
+      onFilterChange: this.filterCharacters,
+      selectedFilters: this.state.filters,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87,
+        lineNumber: 108,
         columnNumber: 21
       }
     })), __jsx("div", {
@@ -659,15 +1209,49 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89,
+        lineNumber: 114,
         columnNumber: 17
       }
-    }, __jsx(_components_card__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      CharacterData: this.state.CharacterDataToSend,
+    }, __jsx(_components_CharacterFiltersApplied_CharacterFiltersApplied__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      filters: this.state.filters,
+      onAppliedFilterRemove: this.onAppliedFilterRemove,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90,
+        lineNumber: 115,
+        columnNumber: 21
+      }
+    }), __jsx(_components_Search__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      onSearch: this.searchCharacters,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 116,
+        columnNumber: 21
+      }
+    }), __jsx(_components_Sorting__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 117,
+        columnNumber: 21
+      }
+    }), __jsx(_components_CharacterList_CharacterList__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      characters: this.state.characters,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 118,
+        columnNumber: 21
+      }
+    }), __jsx(_components_Pagination_Pagination__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      pagination: this.state.pagination,
+      onPaginate: this.paginateCharacters,
+      page: this.state.page,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 119,
         columnNumber: 21
       }
     })));
@@ -679,24 +1263,25 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 /***/ }),
 
-/***/ "./redux/reducers/characters.js":
-/*!**************************************!*\
-  !*** ./redux/reducers/characters.js ***!
-  \**************************************/
+/***/ "./redux/reducers/filters.js":
+/*!***********************************!*\
+  !*** ./redux/reducers/filters.js ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (function (characters = [], action) {
+/* harmony default export */ __webpack_exports__["default"] = (function (filters = [], action) {
   switch (action.type) {
-    case 'SET_CHARACTERS':
-      return {
-        errorMessage: action.payload
-      };
+    case 'ADD_FILTER':
+      filters = filters.concat('');
+
+    case 'REMOVE_FILTER':
+      filters = filters.filter(() => false);
   }
 
-  return characters;
+  return filters;
 });
 ;
 
@@ -713,11 +1298,11 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "redux");
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _characters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./characters */ "./redux/reducers/characters.js");
+/* harmony import */ var _filters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./filters */ "./redux/reducers/filters.js");
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  characters: _characters__WEBPACK_IMPORTED_MODULE_1__["default"]
+  filters: _filters__WEBPACK_IMPORTED_MODULE_1__["default"]
 }));
 
 /***/ }),
@@ -750,6 +1335,539 @@ function getStore(initialState = {}) {
 
 /***/ }),
 
+/***/ "./services/character/index.js":
+/*!*************************************!*\
+  !*** ./services/character/index.js ***!
+  \*************************************/
+/*! exports provided: getCharacters */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCharacters", function() { return getCharacters; });
+/* harmony import */ var _http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../http */ "./services/http/index.js");
+
+function getCharacters(params = {}) {
+  const species = (params.species || []).map(species => `species=${species}`).join('&');
+  const gender = (params.gender || []).map(gender => `gender=${gender.toLowerCase()}`).join('&');
+  const page = `page=${params.page || 1}`;
+  const name = `name=${params.searchText || ''}`;
+  const url = `https://rickandmortyapi.com/api/character/?${species}&${gender}&${page}&${name}`;
+  console.log(url);
+  return _http__WEBPACK_IMPORTED_MODULE_0__["default"].get(url);
+  /*
+  return Promise.resolve({
+     data: {
+      "info": {
+          "count": 73,
+          "pages": 4,
+          "next": "https://rickandmortyapi.com/api/character/?page=2&name=rick",
+          "prev": ""
+      },
+      "results": [
+          {
+              "id": 1,
+              "name": "Rick Sanchez",
+              "status": "Alive",
+              "species": "Human",
+              "type": "",
+              "gender": "Male",
+              "origin": {
+                  "name": "Earth (C-137)",
+                  "url": "https://rickandmortyapi.com/api/location/1"
+              },
+              "location": {
+                  "name": "Earth (Replacement Dimension)",
+                  "url": "https://rickandmortyapi.com/api/location/20"
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/1",
+                  "https://rickandmortyapi.com/api/episode/2",
+                  "https://rickandmortyapi.com/api/episode/3",
+                  "https://rickandmortyapi.com/api/episode/4",
+                  "https://rickandmortyapi.com/api/episode/5",
+                  "https://rickandmortyapi.com/api/episode/6",
+                  "https://rickandmortyapi.com/api/episode/7",
+                  "https://rickandmortyapi.com/api/episode/8",
+                  "https://rickandmortyapi.com/api/episode/9",
+                  "https://rickandmortyapi.com/api/episode/10",
+                  "https://rickandmortyapi.com/api/episode/11",
+                  "https://rickandmortyapi.com/api/episode/12",
+                  "https://rickandmortyapi.com/api/episode/13",
+                  "https://rickandmortyapi.com/api/episode/14",
+                  "https://rickandmortyapi.com/api/episode/15",
+                  "https://rickandmortyapi.com/api/episode/16",
+                  "https://rickandmortyapi.com/api/episode/17",
+                  "https://rickandmortyapi.com/api/episode/18",
+                  "https://rickandmortyapi.com/api/episode/19",
+                  "https://rickandmortyapi.com/api/episode/20",
+                  "https://rickandmortyapi.com/api/episode/21",
+                  "https://rickandmortyapi.com/api/episode/22",
+                  "https://rickandmortyapi.com/api/episode/23",
+                  "https://rickandmortyapi.com/api/episode/24",
+                  "https://rickandmortyapi.com/api/episode/25",
+                  "https://rickandmortyapi.com/api/episode/26",
+                  "https://rickandmortyapi.com/api/episode/27",
+                  "https://rickandmortyapi.com/api/episode/28",
+                  "https://rickandmortyapi.com/api/episode/29",
+                  "https://rickandmortyapi.com/api/episode/30",
+                  "https://rickandmortyapi.com/api/episode/31"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/1",
+              "created": "2017-11-04T18:48:46.250Z"
+          },
+          {
+              "id": 8,
+              "name": "Adjudicator Rick",
+              "status": "Dead",
+              "species": "Human",
+              "type": "",
+              "gender": "Male",
+              "origin": {
+                  "name": "unknown",
+                  "url": ""
+              },
+              "location": {
+                  "name": "Citadel of Ricks",
+                  "url": "https://rickandmortyapi.com/api/location/3"
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/8.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/28"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/8",
+              "created": "2017-11-04T20:03:34.737Z"
+          },
+          {
+              "id": 15,
+              "name": "Alien Rick",
+              "status": "unknown",
+              "species": "Alien",
+              "type": "",
+              "gender": "Male",
+              "origin": {
+                  "name": "unknown",
+                  "url": ""
+              },
+              "location": {
+                  "name": "Citadel of Ricks",
+                  "url": "https://rickandmortyapi.com/api/location/3"
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/15.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/10"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/15",
+              "created": "2017-11-04T20:56:13.215Z"
+          },
+          {
+              "id": 19,
+              "name": "Antenna Rick",
+              "status": "unknown",
+              "species": "Human",
+              "type": "Human with antennae",
+              "gender": "Male",
+              "origin": {
+                  "name": "unknown",
+                  "url": ""
+              },
+              "location": {
+                  "name": "unknown",
+                  "url": ""
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/19.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/10"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/19",
+              "created": "2017-11-04T22:28:13.756Z"
+          },
+          {
+              "id": 22,
+              "name": "Aqua Rick",
+              "status": "unknown",
+              "species": "Humanoid",
+              "type": "Fish-Person",
+              "gender": "Male",
+              "origin": {
+                  "name": "unknown",
+                  "url": ""
+              },
+              "location": {
+                  "name": "Citadel of Ricks",
+                  "url": "https://rickandmortyapi.com/api/location/3"
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/22.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/10",
+                  "https://rickandmortyapi.com/api/episode/22",
+                  "https://rickandmortyapi.com/api/episode/28"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/22",
+              "created": "2017-11-04T22:41:07.171Z"
+          },
+          {
+              "id": 48,
+              "name": "Black Rick",
+              "status": "Alive",
+              "species": "Human",
+              "type": "",
+              "gender": "Male",
+              "origin": {
+                  "name": "unknown",
+                  "url": ""
+              },
+              "location": {
+                  "name": "Citadel of Ricks",
+                  "url": "https://rickandmortyapi.com/api/location/3"
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/48.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/22",
+                  "https://rickandmortyapi.com/api/episode/28"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/48",
+              "created": "2017-11-05T11:15:26.044Z"
+          },
+          {
+              "id": 56,
+              "name": "Bootleg Portal Chemist Rick",
+              "status": "Dead",
+              "species": "Human",
+              "type": "",
+              "gender": "Male",
+              "origin": {
+                  "name": "unknown",
+                  "url": ""
+              },
+              "location": {
+                  "name": "Citadel of Ricks",
+                  "url": "https://rickandmortyapi.com/api/location/3"
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/56.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/28"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/56",
+              "created": "2017-11-05T11:34:16.447Z"
+          },
+          {
+              "id": 69,
+              "name": "Commander Rick",
+              "status": "Dead",
+              "species": "Human",
+              "type": "",
+              "gender": "Male",
+              "origin": {
+                  "name": "unknown",
+                  "url": ""
+              },
+              "location": {
+                  "name": "Citadel of Ricks",
+                  "url": "https://rickandmortyapi.com/api/location/3"
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/69.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/22"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/69",
+              "created": "2017-11-30T11:28:06.461Z"
+          },
+          {
+              "id": 72,
+              "name": "Cool Rick",
+              "status": "Alive",
+              "species": "Human",
+              "type": "",
+              "gender": "Male",
+              "origin": {
+                  "name": "Earth (K-83)",
+                  "url": "https://rickandmortyapi.com/api/location/26"
+              },
+              "location": {
+                  "name": "Citadel of Ricks",
+                  "url": "https://rickandmortyapi.com/api/location/3"
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/72.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/28"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/72",
+              "created": "2017-11-30T11:41:11.542Z"
+          },
+          {
+              "id": 74,
+              "name": "Cop Rick",
+              "status": "Alive",
+              "species": "Human",
+              "type": "",
+              "gender": "Male",
+              "origin": {
+                  "name": "unknown",
+                  "url": ""
+              },
+              "location": {
+                  "name": "Citadel of Ricks",
+                  "url": "https://rickandmortyapi.com/api/location/3"
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/74.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/28"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/74",
+              "created": "2017-11-30T11:48:18.950Z"
+          },
+          {
+              "id": 78,
+              "name": "Cowboy Rick",
+              "status": "Alive",
+              "species": "Human",
+              "type": "",
+              "gender": "Male",
+              "origin": {
+                  "name": "unknown",
+                  "url": ""
+              },
+              "location": {
+                  "name": "Citadel of Ricks",
+                  "url": "https://rickandmortyapi.com/api/location/3"
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/78.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/10",
+                  "https://rickandmortyapi.com/api/episode/28"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/78",
+              "created": "2017-11-30T14:15:18.347Z"
+          },
+          {
+              "id": 82,
+              "name": "Cronenberg Rick",
+              "status": "unknown",
+              "species": "Cronenberg",
+              "type": "",
+              "gender": "Male",
+              "origin": {
+                  "name": "Cronenberg Earth",
+                  "url": "https://rickandmortyapi.com/api/location/12"
+              },
+              "location": {
+                  "name": "Earth (C-137)",
+                  "url": "https://rickandmortyapi.com/api/location/1"
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/82.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/6",
+                  "https://rickandmortyapi.com/api/episode/10"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/82",
+              "created": "2017-11-30T14:28:54.596Z"
+          },
+          {
+              "id": 86,
+              "name": "Cyclops Rick",
+              "status": "Dead",
+              "species": "Humanoid",
+              "type": "",
+              "gender": "Male",
+              "origin": {
+                  "name": "unknown",
+                  "url": ""
+              },
+              "location": {
+                  "name": "Citadel of Ricks",
+                  "url": "https://rickandmortyapi.com/api/location/3"
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/86.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/10",
+                  "https://rickandmortyapi.com/api/episode/22",
+                  "https://rickandmortyapi.com/api/episode/28"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/86",
+              "created": "2017-11-30T20:53:10.382Z"
+          },
+          {
+              "id": 103,
+              "name": "Doofus Rick",
+              "status": "unknown",
+              "species": "Human",
+              "type": "",
+              "gender": "Male",
+              "origin": {
+                  "name": "Earth (J19ζ7)",
+                  "url": "https://rickandmortyapi.com/api/location/31"
+              },
+              "location": {
+                  "name": "Earth (Replacement Dimension)",
+                  "url": "https://rickandmortyapi.com/api/location/20"
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/103.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/10",
+                  "https://rickandmortyapi.com/api/episode/22"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/103",
+              "created": "2017-12-01T12:29:27.984Z"
+          },
+          {
+              "id": 119,
+              "name": "Evil Rick",
+              "status": "Dead",
+              "species": "Humanoid",
+              "type": "Robot",
+              "gender": "Male",
+              "origin": {
+                  "name": "unknown",
+                  "url": ""
+              },
+              "location": {
+                  "name": "Citadel of Ricks",
+                  "url": "https://rickandmortyapi.com/api/location/3"
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/119.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/10"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/119",
+              "created": "2017-12-26T16:17:16.472Z"
+          },
+          {
+              "id": 135,
+              "name": "Garment District Rick",
+              "status": "Dead",
+              "species": "Human",
+              "type": "",
+              "gender": "Male",
+              "origin": {
+                  "name": "unknown",
+                  "url": ""
+              },
+              "location": {
+                  "name": "Citadel of Ricks",
+                  "url": "https://rickandmortyapi.com/api/location/3"
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/135.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/28"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/135",
+              "created": "2017-12-26T20:51:43.614Z"
+          },
+          {
+              "id": 164,
+              "name": "Insurance Rick",
+              "status": "unknown",
+              "species": "Human",
+              "type": "",
+              "gender": "Male",
+              "origin": {
+                  "name": "unknown",
+                  "url": ""
+              },
+              "location": {
+                  "name": "Citadel of Ricks",
+                  "url": "https://rickandmortyapi.com/api/location/3"
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/164.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/10"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/164",
+              "created": "2017-12-29T17:03:08.645Z"
+          },
+          {
+              "id": 165,
+              "name": "Investigator Rick",
+              "status": "Dead",
+              "species": "Human",
+              "type": "",
+              "gender": "Male",
+              "origin": {
+                  "name": "unknown",
+                  "url": ""
+              },
+              "location": {
+                  "name": "Citadel of Ricks",
+                  "url": "https://rickandmortyapi.com/api/location/3"
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/165.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/28"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/165",
+              "created": "2017-12-29T17:05:15.514Z"
+          },
+          {
+              "id": 187,
+              "name": "Juggling Rick",
+              "status": "unknown",
+              "species": "Human",
+              "type": "",
+              "gender": "Male",
+              "origin": {
+                  "name": "unknown",
+                  "url": ""
+              },
+              "location": {
+                  "name": "Citadel of Ricks",
+                  "url": "https://rickandmortyapi.com/api/location/3"
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/187.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/28"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/187",
+              "created": "2017-12-29T18:59:47.440Z"
+          },
+          {
+              "id": 215,
+              "name": "Maximums Rickimus",
+              "status": "Dead",
+              "species": "Human",
+              "type": "",
+              "gender": "Male",
+              "origin": {
+                  "name": "unknown",
+                  "url": ""
+              },
+              "location": {
+                  "name": "Citadel of Ricks",
+                  "url": "https://rickandmortyapi.com/api/location/3"
+              },
+              "image": "https://rickandmortyapi.com/api/character/avatar/215.jpeg",
+              "episode": [
+                  "https://rickandmortyapi.com/api/episode/10",
+                  "https://rickandmortyapi.com/api/episode/22"
+              ],
+              "url": "https://rickandmortyapi.com/api/character/215",
+              "created": "2017-12-30T14:27:55.489Z"
+          }
+      ]
+  }
+  });
+  */
+}
+
+/***/ }),
+
+/***/ "./services/http/index.js":
+/*!********************************!*\
+  !*** ./services/http/index.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ __webpack_exports__["default"] = (axios__WEBPACK_IMPORTED_MODULE_0___default.a.create());
+
+/***/ }),
+
 /***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
@@ -757,8 +1875,19 @@ function getStore(initialState = {}) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/nitbhatn0/Desktop/myToons/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/rakrawat/workspace/my-toons/pages/index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 

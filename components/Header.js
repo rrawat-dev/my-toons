@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import Search from './Search';
-import Sorting from './Sorting';
+
 
 const Logo = styled.h1`
   font-size: 4rem;
@@ -50,8 +49,7 @@ const Header = () => (
         </Logo>
       </div>
       <div className="sub-bar">
-        <Search />
-        <Sorting />
+
       </div>
     </StyledHeader>
   );

@@ -108,13 +108,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Search__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Search */ "./components/Search.js");
-/* harmony import */ var _Sorting__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Sorting */ "./components/Sorting.js");
-var _jsxFileName = "/Users/nitbhatn0/Desktop/myToons/components/Header.js";
+var _jsxFileName = "/Users/rakrawat/workspace/my-toons/components/Header.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
 
 
 const Logo = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h1`
@@ -157,7 +153,7 @@ const Header = () => __jsx(StyledHeader, {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 44,
+    lineNumber: 43,
     columnNumber: 5
   }
 }, __jsx("div", {
@@ -165,14 +161,14 @@ const Header = () => __jsx(StyledHeader, {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 45,
+    lineNumber: 44,
     columnNumber: 7
   }
 }, __jsx(Logo, {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 46,
+    lineNumber: 45,
     columnNumber: 9
   }
 }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -180,14 +176,14 @@ const Header = () => __jsx(StyledHeader, {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 47,
+    lineNumber: 46,
     columnNumber: 11
   }
 }, __jsx("a", {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 48,
+    lineNumber: 47,
     columnNumber: 13
   }
 }, "My Toons")))), __jsx("div", {
@@ -195,24 +191,10 @@ const Header = () => __jsx(StyledHeader, {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 52,
+    lineNumber: 51,
     columnNumber: 7
   }
-}, __jsx(_Search__WEBPACK_IMPORTED_MODULE_3__["default"], {
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 53,
-    columnNumber: 9
-  }
-}), __jsx(_Sorting__WEBPACK_IMPORTED_MODULE_4__["default"], {
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 54,
-    columnNumber: 9
-  }
-})));
+}));
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
 
@@ -231,7 +213,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/nitbhatn0/Desktop/myToons/components/Meta.js";
+var _jsxFileName = "/Users/rakrawat/workspace/my-toons/components/Meta.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -307,7 +289,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
 /* harmony import */ var _Meta__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Meta */ "./components/Meta.js");
-var _jsxFileName = "/Users/nitbhatn0/Desktop/myToons/components/Page.js";
+var _jsxFileName = "/Users/rakrawat/workspace/my-toons/components/Page.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -416,131 +398,6 @@ class Page extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Page);
-
-/***/ }),
-
-/***/ "./components/Search.js":
-/*!******************************!*\
-  !*** ./components/Search.js ***!
-  \******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/Users/nitbhatn0/Desktop/myToons/components/Search.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-class Search extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  render() {
-    return __jsx("div", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 6,
-        columnNumber: 13
-      }
-    }, __jsx("input", {
-      type: "text",
-      placeholder: "Search here..",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 7,
-        columnNumber: 17
-      }
-    }), __jsx("button", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 8,
-        columnNumber: 17
-      }
-    }, "Search"));
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (Search);
-
-/***/ }),
-
-/***/ "./components/Sorting.js":
-/*!*******************************!*\
-  !*** ./components/Sorting.js ***!
-  \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/Users/nitbhatn0/Desktop/myToons/components/Sorting.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-class Sorting extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  render() {
-    return __jsx("div", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 6,
-        columnNumber: 13
-      }
-    }, __jsx("h3", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 7,
-        columnNumber: 17
-      }
-    }, "Sort by ID"), __jsx("input", {
-      type: "radio",
-      name: "sorting",
-      id: "ascending",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 8,
-        columnNumber: 17
-      }
-    }), __jsx("label", {
-      for: "ascending",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 9,
-        columnNumber: 17
-      }
-    }, "Ascending"), __jsx("input", {
-      type: "radio",
-      name: "sorting",
-      id: "descending",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 10,
-        columnNumber: 17
-      }
-    }), __jsx("label", {
-      for: "descending",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 11,
-        columnNumber: 17
-      }
-    }, "Descending"));
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (Sorting);
 
 /***/ }),
 
@@ -2386,7 +2243,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next-redux-wrapper */ "next-redux-wrapper");
 /* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_redux_wrapper__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "/Users/nitbhatn0/Desktop/myToons/pages/_app.js";
+var _jsxFileName = "/Users/rakrawat/workspace/my-toons/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -2425,21 +2282,21 @@ const store = Object(_redux_store__WEBPACK_IMPORTED_MODULE_3__["getStore"])();
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24,
+        lineNumber: 25,
         columnNumber: 13
       }
     }, __jsx(_components_Page__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25,
+        lineNumber: 26,
         columnNumber: 17
       }
     }, __jsx(Component, _extends({}, this.props.pageProps, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26,
+        lineNumber: 27,
         columnNumber: 21
       }
     }))));
@@ -2449,24 +2306,25 @@ const store = Object(_redux_store__WEBPACK_IMPORTED_MODULE_3__["getStore"])();
 
 /***/ }),
 
-/***/ "./redux/reducers/characters.js":
-/*!**************************************!*\
-  !*** ./redux/reducers/characters.js ***!
-  \**************************************/
+/***/ "./redux/reducers/filters.js":
+/*!***********************************!*\
+  !*** ./redux/reducers/filters.js ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (function (characters = [], action) {
+/* harmony default export */ __webpack_exports__["default"] = (function (filters = [], action) {
   switch (action.type) {
-    case 'SET_CHARACTERS':
-      return {
-        errorMessage: action.payload
-      };
+    case 'ADD_FILTER':
+      filters = filters.concat('');
+
+    case 'REMOVE_FILTER':
+      filters = filters.filter(() => false);
   }
 
-  return characters;
+  return filters;
 });
 ;
 
@@ -2483,11 +2341,11 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "redux");
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _characters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./characters */ "./redux/reducers/characters.js");
+/* harmony import */ var _filters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./filters */ "./redux/reducers/filters.js");
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  characters: _characters__WEBPACK_IMPORTED_MODULE_1__["default"]
+  filters: _filters__WEBPACK_IMPORTED_MODULE_1__["default"]
 }));
 
 /***/ }),

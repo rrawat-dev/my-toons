@@ -5,21 +5,22 @@ import { Provider } from 'react-redux';
 import withRedux from "next-redux-wrapper";
 
 const store = getStore();
+
 export default withRedux(getStore, {debug: true})(class MyApp extends App {
+    
     static async getInitialProps({Component, ctx}) {
 
         return {
             pageProps: {
-                // Call page-level getInitialProps
                 ...(Component.getInitialProps ? await Component.getInitialProps(ctx) : {})
             }
         };
 
     }
 
-
     render () {
         const { Component } = this.props;
+
         return (
             <Provider store={store}> 
                 <Page>
